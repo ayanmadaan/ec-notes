@@ -1,0 +1,648 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Quiz 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2ca1be47-1fe0-40d9-b6cb-0cfd5862bd96" class="page sans"><header><h1 class="page-title">Quiz 1</h1></header><div class="page-body"><ul id="3518aa57-5171-4e95-ab5a-7913c5bf31c0" class="toggle"><li><details open=""><summary>Sources of impurities in Water</summary><ul id="3489736d-3518-4c34-868a-8530ff9db5b1" class="bulleted-list"><li>Garbage</li></ul><ul id="d9da7109-3374-45c0-bda6-b5c4c4d4be71" class="bulleted-list"><li>Industrial Waste/Sewage </li></ul><ul id="6ce9fac3-561b-4b53-9908-0b39125b85c8" class="bulleted-list"><li>Decomposition of plants/animal </li></ul><ul id="601cebd0-5968-4d65-b0ed-33b40ba1e10c" class="bulleted-list"><li>Growth of algae/bacteria </li></ul><p id="bb14b49a-057a-49cb-9a4a-a235aa74d39d" class="">
+</p><p id="8c394a9c-75f4-4f95-bb8d-26e4fb34b79f" class="">
+</p></details></li></ul><ul id="634ba92a-f140-4a71-93c2-3b6fc09c4541" class="toggle"><li><details open=""><summary>Organic Water Pollutants</summary><ul id="343b23e0-eb84-4aea-b465-cb54283fee9d" class="bulleted-list"><li><span style="border-bottom:0.05em solid"><strong>Petroleum hydrocarbons</strong></span><ul id="be5a7cc4-7f77-42f9-8310-dbc4fb6654df" class="bulleted-list"><li>Fuels</li></ul><ul id="97b1a80e-6751-4708-895d-b97e05b266bf" class="bulleted-list"><li>Lubricants</li></ul><ul id="aa8019b7-e2fc-455e-876b-71acf0216fc6" class="bulleted-list"><li>Fuel combustion by products</li></ul></li></ul><ul id="449a60ea-02af-42c4-8bd4-6632c848bcd0" class="bulleted-list"><li><span style="border-bottom:0.05em solid"><strong>VOCs</strong></span><ul id="0a23be19-14bd-4fe0-bffd-55a4752b7b0d" class="bulleted-list"><li>Industrial Components</li></ul></li></ul><ul id="f6884237-2cfa-4f6d-b97d-4cf63c4af382" class="bulleted-list"><li><span style="border-bottom:0.05em solid"><strong>Chlorinated Solvents</strong></span><ul id="2f40b0b4-d59c-4554-bd6d-7ac2ab74d899" class="bulleted-list"><li>Dense Non-Aqueous Phase Liquids (DNAPLs) settle on non-water beds.</li></ul></li></ul><p id="f7694ac1-c4f7-44d7-bdbe-7eb7d1a00c84" class="">
+</p></details></li></ul><ul id="24e72f10-104c-4ebe-9d92-acf11e5440fb" class="toggle"><li><details open=""><summary>Inorganic</summary><ul id="66b1ffdc-6abb-4fda-8681-661db719d669" class="bulleted-list"><li>Acidity caused by industrial discharges<ul id="737e81da-b47a-40a6-bf97-c78089b37dfa" class="bulleted-list"><li>SO2 in power plants</li></ul></li></ul><ul id="0842a79f-7c17-4301-a876-891cd6e4f1ff" class="bulleted-list"><li>NH3, food processing</li></ul><ul id="bb5ea6a6-7ec8-40f5-aae1-04b16b5822a6" class="bulleted-list"><li>Chemical Waste (Industrial Production)</li></ul><ul id="e4455d35-acf5-4dd2-adda-fd8eca19cf9a" class="bulleted-list"><li>Fertilizers containing nutrients (NO(-)3 and PO(4-)3)</li></ul><ul id="15d7e4d9-5828-425b-9ca6-bd715063304c" class="bulleted-list"><li></li></ul></details></li></ul><ul id="751d2d23-3b67-42b1-aec8-4976888a3238" class="toggle"><li><details open=""><summary>Thermal Pollution</summary><ul id="23e4eb9d-5f16-4890-93c5-627e2dedf6bd" class="bulleted-list"><li>Use of water as coolant</li></ul><ul id="61cb485e-9a27-49c5-86f2-ed64110d3b01" class="bulleted-list"><li>High temp water decreases O2 levels that jeopardize aqualife.</li></ul><ul id="d24a1de3-7bab-4778-bcd5-a68909656131" class="bulleted-list"><li></li></ul></details></li></ul><p id="8b3d0570-1f3e-43f7-8560-2ed1999cf06d" class="">
+</p><h2 id="f219d2fc-31c7-4245-b6df-fedee3ad3478" class="">Hard Water</h2><ul id="95abdc3c-feb4-4300-974d-bfdd63df4306" class="bulleted-list"><li>High mineral content</li></ul><ul id="0360ddea-08b6-4135-be6e-5930db068433" class="bulleted-list"><li>Breakdowns in boilers, cooling towers.</li></ul><p id="69651863-be4f-4373-969b-cc0707480a5d" class=""><div class="indented"><h3 id="49bac847-52a9-495b-a75a-5707187f4597" class="">Temp Hardness (Alkaline/Carbonate Hardness)</h3><ul id="b4a1545c-b8ed-428e-91ff-23cc213a3e01" class="bulleted-list"><li>Bicarbonates of Ca and Mg (can be removed by boiling)</li></ul><ul id="cdfd0ed2-42b7-462b-b65d-9a41c83d4be5" class="bulleted-list"><li>Reactions:<figure id="4ed923a7-a8dc-4d02-8155-aff760bd731e" class="image"><a href="Quiz%201%204ed923a7a8dc4d028155aff760bd731e/Untitled.png"><img style="width:480px" src="Quiz%201%204ed923a7a8dc4d028155aff760bd731e/Untitled.png"/></a></figure></li></ul><p id="8592479d-2ebf-4015-8008-948e8f6356b0" class="">
+</p><h3 id="1d56a8a5-d012-48cb-9288-8eba004426d0" class="">Permanent Hardness (Alkaline/Carbonate Hardness)</h3><ul id="f0fb5a49-b3cb-432f-a7ff-39f203d8699c" class="bulleted-list"><li>Chlorides and Sulphates of Ca and Mg</li></ul><ul id="b66b75de-2df5-4742-b08f-f948cd075525" class="bulleted-list"><li>Addition of softening agents</li></ul><ul id="48343c8a-b5f1-418d-910f-8945bf0691ad" class="bulleted-list"><li>MgCl2, MgSO4, CaCl2, CaSO4.</li></ul><p id="336897d3-737a-4bfb-8c3e-e9c5f33589b8" class="">
+</p><h3 id="e940b3fa-6060-4c83-9ec6-7bcf3c557d51" class="">Degree of Hardness</h3><ul id="df7ee622-cefe-44c4-a8fe-d99ab2650dbd" class="bulleted-list"><li>No. of parts by weight of CaCO3 hardness per number of parts of water (100 mol wt and most insoluble salt for water)</li></ul><ul id="149f44b9-722b-414f-94ba-eb442a6f4afc" class="bulleted-list"><li>Calc:</li></ul><figure id="0e00b969-d8cf-424b-a1cd-bdce2da86882" class="image"><a href="Quiz%201%204ed923a7a8dc4d028155aff760bd731e/Untitled%201.png"><img style="width:706px" src="Quiz%201%204ed923a7a8dc4d028155aff760bd731e/Untitled%201.png"/></a></figure><p id="b2fdd975-b3f0-4391-ac66-a18d2a23c671" class="">
+</p></div></p><h2 id="c25f8c00-020b-4a90-a59b-a55e66d219ba" class="">Analysis of Water</h2><ul id="a6a38f25-b9ab-4b6e-a70d-2b2aea265625" class="toggle"><li><details open=""><summary>BOD</summary><ul id="ca3d3c92-eaf4-476d-ab3f-f32cf6f9e28f" class="toggle"><li><details open=""><summary>Used to measure organic quality of water.</summary></details></li></ul><ul id="277d8996-b61d-48ab-be44-0576e33d0d45" class="toggle"><li><details open=""><summary>Measures amount of org carbon that bacteria can oxidize.</summary></details></li></ul><ul id="4d52c0ac-3393-418e-8b7b-214d70c557ee" class="toggle"><li><details open=""><summary>BOD value is expressed in mg of O2 consumed /L sample during 5days of incubation at 20deg celsius.</summary></details></li></ul><ul id="26845c29-3f9a-46a6-9f0c-1699209b39b9" class="toggle"><li><details open=""><summary>Indicates amount of dissolved O2 needed by aerobic organisms to breakdown organic material.</summary></details></li></ul><ul id="6ae92633-9ce2-4d1a-a0eb-e8fbd7580a6f" class="toggle"><li><details open=""><summary>Values</summary><ul id="3788aabc-3076-4616-8f7f-e0cb6ce1a365" class="toggle"><li><details open=""><summary>Pristine: &lt; 1mg/L</summary></details></li></ul><ul id="63ffda15-6396-46f0-97e6-614a0472bf8a" class="toggle"><li><details open=""><summary>Polluted (moderate): 2-8 mg/L</summary></details></li></ul><ul id="a723f531-0fcd-4ffb-b9cd-9143d75ca56c" class="toggle"><li><details open=""><summary>Untreated Sewage: 600mg/L in Europe and 200mg/L in US</summary></details></li></ul></details></li></ul><p id="d642c68b-3caa-45ab-9422-7558a3e27e86" class=""> </p></details></li></ul><ul id="e780dde0-38e7-4ccb-8453-8bf8ac6488f2" class="toggle"><li><details open=""><summary>TOC</summary><ul id="f69c98b9-1afa-4f03-ba2f-879de40b7b1f" class="toggle"><li><details open=""><summary>First chem analysis on oil exploration</summary></details></li></ul><ul id="05018954-8b31-4d44-9696-94c232e65426" class="toggle"><li><details open=""><summary>Amount of carbon based in organic cpd or cleanliness of pharma manu eqp.</summary></details></li></ul><ul id="5bd2a5e3-cf80-4150-8e22-3411392c1c49" class="toggle"><li><details open=""><summary>Measures: total carbon + <strong>inorganic carbon (dissolved CO2 and carbonic acids)</strong></summary></details></li></ul><ul id="cfe2e2f3-305f-4e7a-b26c-58b0bca35ee8" class="toggle"><li><details open=""><summary><strong>Total Carbon - Inorganic Carbon = TOC</strong></summary></details></li></ul><ul id="d193956a-d43d-4863-8e11-2f44140b5665" class="toggle"><li><details open=""><summary></summary></details></li></ul></details></li></ul><ul id="28c4c762-04e9-48f1-b6a6-aabd68059bb1" class="toggle"><li><details open=""><summary>COD</summary><ul id="6b8ba90f-fe3c-47f8-a88d-086972517743" class="toggle"><li><details open=""><summary>Total measurement of chemicals in water that can be oxidized.</summary></details></li></ul></details></li></ul><p id="577dcd34-2c31-4823-a67b-c115d322e4ee" class=""><span style="border-bottom:0.05em solid"><strong>COD preferred over BOD cause you get results quickly.</strong></span></p><p id="0598a447-a766-49e3-b18d-ee13b5f15fd3" class="">
+</p><p id="17ea1133-cf87-4950-ad4f-ca0db713d1f0" class="">
+</p><h2 id="8b91a830-c704-4214-9dfd-c9947050772a" class="">Methods for water softening</h2><ul id="297337fc-828e-4ce2-ad3a-cc4bba01d0df" class="toggle"><li><details open=""><summary>Removal of Ca2+/Mg2+ </summary></details></li></ul><ul id="b5aba611-6243-4092-accd-5b1ba1ef219a" class="toggle"><li><details open=""><summary>Sequestration of these ions </summary><ul id="8769928d-a16d-41f5-a5cc-8f3f9931184f" class="toggle"><li><details open=""><summary>Bind them to a molecule that prevents them from interfering with a soap.</summary></details></li></ul><ul id="46035ed9-6ad8-4b18-9d70-b08d145f917f" class="toggle"><li><details open=""><summary></summary></details></li></ul></details></li></ul><ul id="5fdc6b76-ccdc-4833-845d-b8d09a503e59" class="toggle"><li><details open=""><summary>Removal</summary><ul id="b00fae00-c9a8-402f-8585-dcc392e2246c" class="toggle"><li><details open=""><summary>Ion exchange</summary></details></li></ul><ul id="bb2d38d9-79d5-4a11-aff8-9fc8420690cd" class="toggle"><li><details open=""><summary>Precipitation method</summary></details></li></ul></details></li></ul><ul id="3a9b8794-caff-4ceb-894a-7ba3aadf6233" class="toggle"><li><details open=""><summary>These two ions exist as non-volatile salts, but distillation is expensive at large scale.</summary></details></li></ul><p id="f6be9f6b-94b4-47de-af19-87f871afeb09" class=""><div class="indented"><h3 id="946779b1-4695-4c9e-9d58-ca2606c3ee49" class="">Methods:</h3><ul id="b559b010-8ae6-4ca0-be15-b9014f923d49" class="toggle"><li><details open=""><summary>Ion exchange Resin devices</summary><ul id="2324bd89-b93e-4266-bfe3-a9f9dbb0219c" class="toggle"><li><details open=""><summary>polymers containing anions to which Na+ fn group is bonded.</summary></details></li></ul><ul id="5ff59cb8-1af2-4074-a1fc-11bdf02aa51b" class="toggle"><li><details open=""><summary>Contains Na+ that readily replaces Ca2+/Mg2+. </summary></details></li></ul><ul id="b8f36fef-3c7e-49b6-9252-5e51dac7b213" class="toggle"><li><details open=""><summary>the resin capacity is eventually exhausted</summary><ul id="49dce20e-5978-4c71-a167-f1231e7dd4ce" class="toggle"><li><details open=""><summary>contains only Ca2+/Mg2+ for cation exchange </summary></details></li></ul><ul id="a6b26913-c75d-48d3-95da-d6f95c5864be" class="toggle"><li><details open=""><summary>SO4(2-) for anionic exchange</summary></details></li></ul><ul id="bdcc4169-7f48-4613-81d9-44730c2820f9" class="toggle"><li><details open=""><summary>Cationic resin : conc HCl</summary></details></li></ul><ul id="ac65afce-2bea-47b7-ae48-18b1c67916be" class="toggle"><li><details open=""><summary>Anionic resin: soln of NaOH/KOH. </summary></details></li></ul></details></li></ul></details></li></ul><ul id="25745655-5d2f-4a91-967c-e3ec3dcfca65" class="toggle"><li><details open=""><summary>Lime Softening (Clark&#x27;s Method)</summary><ul id="7ed64775-68fb-4d54-a90b-0034a5c82960" class="toggle"><li><details open=""><summary>Add Ca(OH)2 (lime)which softens water (also removes variety of microrg)</summary></details></li></ul><ul id="abf28125-84b4-4f8a-8e53-2b45fb6bdb56" class="toggle"><li><details open=""><summary>Ca(OH)2 + CO2 → CaCO3</summary></details></li></ul><ul id="ac472f66-6164-46d2-baf4-a75679866119" class="toggle"><li><details open=""><summary>During Lime softening there is substantial reduction in TDS.</summary></details></li></ul><ul id="e40c49d8-851f-48b4-8587-8ba9a029d52e" class="toggle"><li><details open=""><summary>No significant change in ion exchange.</summary></details></li></ul></details></li></ul><ul id="b10ff016-29b3-47d8-a8a9-939026b26d9e" class="toggle"><li><details open=""><summary>Membrane Softening (Nano filtration or Reverse Osmosis)</summary><ul id="1b224f02-4e24-42e5-a717-e5c3d3d6ec92" class="toggle"><li><details open=""><summary>Remove Ca+/Mg+ as well as other dissolved compounds through SPM.</summary></details></li></ul><ul id="2b1ed894-9826-4584-b932-2f9b61627945" class="toggle"><li><details open=""><summary><mark class="highlight-red">Produces large vol of waste (20% of input steam)</mark></summary></details></li></ul><ul id="bc6a9148-0e54-4707-8be8-04699fecfa5a" class="toggle"><li><details open=""><summary><mark class="highlight-teal">Uses substantially fewer and very little solid waste.</mark></summary></details></li></ul></details></li></ul><p id="db354a66-c754-4b38-ba09-32ed997132a4" class="">
+</p><h3 id="396aa8d2-a45f-4243-bda5-a4d663a5c34e" class="">Misc</h3><ul id="2f6795c0-e809-438e-ad83-7796033db6a1" class="toggle"><li><details open=""><summary>Chelators</summary><ul id="b10d3a97-e69c-4cca-af5e-a84b8e7ad0fc" class="toggle"><li><details open=""><summary>EDTA</summary></details></li></ul><ul id="531b8aee-1041-48ed-b3cd-9f309ce668c0" class="toggle"><li><details open=""><summary>Food preservatives and shampoos</summary></details></li></ul></details></li></ul><ul id="5ec75250-dbb9-4cd6-aaaf-5c4e655a04d8" class="toggle"><li><details open=""><summary>Nanofiltration</summary><ul id="4d6766d0-7a86-47d7-bb1e-db02eb31e9b5" class="toggle"><li><details open=""><summary>Membrane filtration</summary></details></li></ul><ul id="7ceeb87d-7efb-459c-9f6a-d67d624f2a33" class="toggle"><li><details open=""><summary>For low TDS water such as surface water.</summary></details></li></ul></details></li></ul><ul id="2fed3be1-09ac-4945-9b2d-c40a06aebcfd" class="toggle"><li><details open=""><summary>Reverse Osmosis</summary><ul id="4349b99f-ca76-47ed-b83d-d703ddb45347" class="toggle"><li><details open=""><summary>Removes large particles by applying pressure on one side.</summary></details></li></ul><ul id="3c805ec0-8438-4efc-be19-d6fdc5e42021" class="toggle"><li><details open=""><summary>Solvent moves from high solute concentration to low solute concentration.</summary></details></li></ul><ul id="99c4e44a-fc7d-471a-af5b-ce0c3cf8c20c" class="toggle"><li><details open=""><summary></summary></details></li></ul></details></li></ul><ul id="b34fa438-457e-4314-9673-fbb0d4590be0" class="toggle"><li><details open=""><summary>Removal Mechanism</summary><ul id="4c7b6885-4768-4cf9-ac47-8ce73534818c" class="toggle"><li><details open=""><summary>Membrane Softening</summary><ul id="fbff6446-d47f-47fb-98c1-b4980f6d21f1" class="toggle"><li><details open=""><summary>Size Exclusion</summary></details></li></ul></details></li></ul><ul id="90066117-b2af-4680-98e8-2bb8e9ce7b2d" class="toggle"><li><details open=""><summary>Reverse Osmosis</summary><ul id="3f41f9e0-e996-42ce-9e17-5e9ca8121b15" class="toggle"><li><details open=""><summary>Diffusive Mechanism</summary><ul id="d1c9aefe-b099-447a-9690-0dab06d322bf" class="toggle"><li><details open=""><summary>depends on solute concentration, pressure, water flux rate.</summary></details></li></ul></details></li></ul></details></li></ul><p id="de62773a-d804-417b-854b-75e7f858ca7d" class="">
+</p></details></li></ul><p id="3140b104-4de6-459d-b578-fefefc987080" class="">
+</p></div></p></div></article></body></html>
